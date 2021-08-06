@@ -5,7 +5,7 @@ from  sklearn.model_selection import train_test_split
 from sklearn.linear_model import ElasticNet
 from urllib.parse import urlparse
 import mlflow
-import mlflow.sklearn
+#import mlflow.sklearn
 import logging
 from git import Repo
 import sys
@@ -21,8 +21,8 @@ logger = logging.getLogger(__name__)
 import dvc.api
 
 
-path='data/AdSmartABdata.csv'
-repo='../abtest-ml'
+path='data/store.csv','tests.csv','train.csv'
+repo='../Rossmann-Pharmaceutical-Sales-prediction'
 version='v1'
 
 
@@ -34,7 +34,7 @@ data_url= dvc.api.get_url(
  )
 
 #print(data_url)
-mlflow.set_experiment('ab-test-mlops')
+mlflow.set_experiment('Rossmann-Pharmaceutical-Sales-prediction')
 
 # def eval_metrics(actual,pred):
 #     rmse= np.sqrt(mean_squared_error(actual,pred))
